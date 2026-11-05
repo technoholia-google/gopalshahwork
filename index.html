@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopal Shah - DXP and AI Solutions Consultant | Technoholia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Gopal Shah - Principal Solutions Consultant at Technoholia, specializing in DXP, AI, Cloud, and ITIL solutions. Transform your business with expert digital transformation consulting.">
+    <meta name="keywords" content="Gopal Shah, Technoholia, DXP, AI Solutions, Cloud Consulting, Digital Transformation, ITIL, Project Management, Sydney">
+    <meta name="author" content="Gopal Shah">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gopalshahwork.pages.dev/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gopal Shah - DXP and AI Solutions Consultant">
+    <meta property="og:description" content="Transform your business with expert DXP, AI, Cloud, and ITIL solutions. Principal Solutions Consultant with 15+ years experience.">
+    <meta property="og:image" content="https://gopalshahwork.pages.dev/images/gopal.png">
+    <meta property="og:image:alt" content="Gopal Shah - Principal Solutions Consultant">
+    <meta property="og:url" content="https://gopalshahwork.pages.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gopal Shah | Technoholia">
+    <meta property="og:locale" content="en_AU">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gopal Shah - DXP and AI Solutions Consultant">
+    <meta name="twitter:description" content="Transform your business with expert DXP, AI, Cloud, and ITIL solutions.">
+    <meta name="twitter:image" content="https://gopalshahwork.pages.dev/images/gopal.png">
+    <meta name="twitter:image:alt" content="Gopal Shah - Principal Solutions Consultant">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Gopal Shah",
+        "jobTitle": "Principal Solutions Consultant",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Technoholia",
+            "url": "https://www.technoholia.com.au"
+        },
+        "url": "https://gopalshahwork.pages.dev/",
+        "image": "https://gopalshahwork.pages.dev/images/gopal.png",
+        "description": "Principal Solutions Consultant specializing in DXP, AI, Cloud, and ITIL solutions with 15+ years of experience.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sydney",
+            "addressRegion": "NSW",
+            "addressCountry": "AU"
+        },
+        "email": "contact@technoholia.com.au",
+        "sameAs": [
+            "https://www.linkedin.com/in/gopalshah20/",
+            "https://www.technoholia.com.au/"
+        ]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #020617; /* slate-950 */
+            --bg-medium: #0f172a; /* slate-900 */
+            --bg-light: #1e293b; /* slate-800 */
+            --text-primary: #f8fafc; /* slate-50 */
+            --text-secondary: #94a3b8; /* slate-400 */
+            --accent: #22d3ee; /* cyan-400 */
+            --accent-hover: #67e8f9; /* cyan-300 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-secondary);
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+        }
+        .timeline-dot {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+        @media (min-width: 768px) {
+            .timeline-item {
+                width: 50%;
+                padding-left: 2.5rem;
+            }
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+            .timeline-item:nth-child(even) {
+                left: 50%;
+                padding-left: 0;
+                padding-right: 2.5rem;
+            }
+            .timeline-dot {
+                left: 50%;
+                 top: 24px;
+            }
+        }
+        .project-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .project-card.hidden {
+            transform: scale(0.9);
+            opacity: 0;
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+        }
+        
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 211, 238, 0.4);
+        }
+        
+        /* Theme toggle styles */
+        .theme-toggle {
+            position: relative;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--bg-light);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--accent);
+            transform: rotate(180deg);
+        }
+        
+        /* Light theme variables */
+        .light-theme {
+            --bg-dark: #f8fafc;
+            --bg-medium: #f1f5f9;
+            --bg-light: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #0891b2;
+            --accent-hover: #06b6d4;
+        }
+        
+        .light-theme body {
+            background-color: var(--bg-dark);
+            color: var(--text-secondary);
+        }
+        
+        /* Light theme fixes for h2 gradient text */
+        .light-theme .text-transparent.bg-clip-text.bg-gradient-to-r.from-white.to-cyan-400 {
+            background: linear-gradient(to right, var(--text-primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Footer styling in light theme */
+        .light-theme footer {
+            background-color: rgba(15, 23, 42, 0.7) !important;
+        }
+        
+        .light-theme footer .text-slate-500 {
+            color: white !important;
+            text-shadow: none;
+            animation: none;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(8, 145, 178, 0.5), 
+                             0 0 20px rgba(8, 145, 178, 0.3),
+                             0 0 30px rgba(8, 145, 178, 0.2);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(8, 145, 178, 0.7), 
+                             0 0 25px rgba(8, 145, 178, 0.4),
+                             0 0 35px rgba(8, 145, 178, 0.3);
+            }
+        }
+        
+        /* Enhanced micro-interactions */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .tech-icon img {
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+        
+        .tech-icon:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .timeline-content {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .timeline-content:hover::before {
+            left: 100%;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(8px);
+            border-color: var(--accent);
+        }
+        
+        .timeline-content:hover .timeline-dot {
+            box-shadow: 0 0 20px var(--accent);
+            border-color: var(--accent-hover);
+        }
+        
+        /* Button micro-interactions */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-shine:hover::before {
+            left: 100%;
+        }
+        
+        /* Project card enhanced interactions */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--accent);
+        }
+        
+        .project-card:hover h3 {
+            color: var(--accent);
+        }
+        
+        /* Navigation link effects */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Pulse animation for important elements */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+        
+        .pulse-hover:hover {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Smooth transitions for all interactive elements */
+        * {
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-slate-950/70 backdrop-blur-lg shadow-lg shadow-black/50 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">Gopal Shah</div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Expertise</a>
+                <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Journey</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="vcard.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">vCard</a>
+                <a href="#" id="resume-download" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors flex items-center space-x-1">
+                    <i data-lucide="download"></i><span>Resume</span>
+                </a>
+                <a href="https://calendar.app.google/BDeS9nnua4ZFd37g6" target="_blank" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Book a Time</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i data-lucide="sun" class="theme-icon"></i>
+                </button>
+                <a href="#contact" class="btn-shine bg-cyan-500 text-white py-2 px-4 rounded-full hover:bg-cyan-400 transition-colors font-semibold">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center text-white"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#about" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">About</a>
+            <a href="#skills" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">Expertise</a>
+            <a href="#experience" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">Journey</a>
+            <a href="#projects" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">Projects</a>
+            <a href="vcard.html" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">vCard</a>
+            <a href="https://calendar.app.google/BDeS9nnua4ZFd37g6" target="_blank" class="mobile-link block py-2 text-slate-300 hover:text-cyan-400">Book a Time</a>
+            <a href="#contact" class="mobile-link block mt-2 bg-cyan-500 text-white text-center py-2 px-4 rounded-full hover:bg-cyan-400 font-semibold">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="flex flex-col md:flex-row items-center my-12 md:my-24 fade-in">
+            <div class="md:w-3/5 text-center md:text-left slide-in-left">
+                <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8 mb-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Gopal Shah</h1>
+                    <p class="text-xl md:text-2xl text-cyan-400 font-semibold mt-2 mb-6">Principal Solutions Consultant</p>
+                    <p class="text-lg text-slate-300 max-w-xl">Transforming IT with DXP, AI, Cloud, Secure ITIL Solutions, Championing Operational Excellence, Projects Management & Talent Development.</p>
+                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="https://www.linkedin.com/in/gopalshah20/" target="_blank" class="btn-shine hover-lift bg-cyan-500 text-white py-3 px-6 rounded-full font-semibold flex items-center space-x-2 hover:bg-cyan-400 transition-colors">
+                            <i data-lucide="linkedin"></i><span>Verify on LinkedIn</span>
+                        </a>
+                        <!-- <a href="https://www.technoholia.com.au/" target="_blank" class="bg-slate-700 text-white py-3 px-6 rounded-full font-semibold flex items-center space-x-2 hover:bg-slate-600 transition-colors">
+                            <i data-lucide="globe"></i><span>Technoholia</span>
+                        </a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-2/5 mt-12 md:mt-0 flex justify-center slide-in-right">
+                <div class="relative">
+                    <img src="images/gopal.png" alt="Gopal Shah" class="rounded-full shadow-2xl shadow-cyan-500/20 w-64 h-64 md:w-80 md:h-80 object-cover lazy-load" loading="lazy">
+                    <div class="absolute inset-0 rounded-full border-4 border-cyan-400/50 animate-pulse"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 fade-in">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center scale-in">Who is Gopal?</h2>
+            <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8 md:p-12 max-w-4xl mx-auto text-center hover-lift">
+                <i data-lucide="rocket" class="text-cyan-400 w-16 h-16 mx-auto mb-6 pulse-hover"></i>
+                <p class="text-lg md:text-xl leading-relaxed text-slate-200">
+                   As a Principal Solutions Consultant based in Sydney, I lead with a global perspective gained across the UK, USA, Europe, and APAC. I provide strategic guidance and hands-on support for projects focused on Digital Experience platforms, AI, Cloud, ITIL, and Project Management. My goal is to help your business achieve measurable outcomes, whether that means a complete digital transformation or optimizing a specific process. I offer expertise in designing scalable solutions, implementing AI-driven tools, developing effective cloud strategies, and ensuring projects are delivered on time and within budget. I'm ready to collaborate on your next challenge and turn your technical goals into reality.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical Expertise Section -->
+        <section id="skills" class="py-24">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center">Technical Expertise</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="tech-tabs">
+                    <button data-target="AI" class="tech-tab py-2 px-5 rounded-full transition bg-cyan-500 text-white">Artificial Intelligence</button>
+                    <button data-target="cms" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">CMS & DXP</button>
+                    <button data-target="cloud" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Cloud & Virtualization</button>
+                    <button data-target="observability" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Observability</button>
+                    <button data-target="devops" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">DevOps & ITSM</button>
+                    <button data-target="data" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Databases</button>
+                    <button data-target="infra" class="tech-tab py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Core Infrastructure</button>
+                </div>
+                <div id="tech-content" class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8 min-h-[200px]">
+                    <div data-id="AI" class="tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/3b82f6/ffffff?text=Copilot " class="rounded-lg"/><span>Azure AI Foundry</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/ff9900/ffffff?text=Gemini " class="rounded-lg"/><span>Google AI Studio</span></div>
+                    </div>
+                    <div data-id="cms" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/f97316/ffffff?text=AEM" class="rounded-lg"/><span>AEM (Adobe)</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0891b2/ffffff?text=Sitecore" class="rounded-lg"/><span>Sitecore</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/84cc16/ffffff?text=Optimizely" class="rounded-lg"/><span>Optimizely</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/84cc16/ffffff?text=Episerver" class="rounded-lg"/><span>Episerver</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0ea5e9/ffffff?text=WordPress" class="rounded-lg"/><span>WordPress</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/a855f7/ffffff?text=WIX" class="rounded-lg"/><span>WIX</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/2563eb/ffffff?text=Contentful" class="rounded-lg"/><span>Contentful</span></div>
+                    </div>
+                    <div data-id="cloud" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/3b82f6/ffffff?text=Azure" class="rounded-lg"/><span>Azure</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/ff9900/ffffff?text=AWS" class="rounded-lg"/><span>AWS</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/34a853/ffffff?text=GCP" class="rounded-lg"/><span>GCP</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/6b7280/ffffff?text=VMware" class="rounded-lg"/><span>VMware</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/4f46e5/ffffff?text=Hyper-V" class="rounded-lg"/><span>Hyper-V</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/f97316/ffffff?text=Citrix" class="rounded-lg"/><span>Citrix</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0ea5e9/ffffff?text=Rackspace" class="rounded-lg"/><span>Rackspace</span></div>
+                    </div>
+                     <div data-id="observability" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/8b5cf6/ffffff?text=Dynatrace" class="rounded-lg"/><span>Dynatrace</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/f59e0b/ffffff?text=Splunk" class="rounded-lg"/><span>Splunk</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/ef4444/ffffff?text=New+Relic" class="rounded-lg"/><span>New Relic</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/10b981/ffffff?text=AppInsight" class="rounded-lg"/><span>AppInsight</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/ec4899/ffffff?text=PagerDuty" class="rounded-lg"/><span>PagerDuty</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/78716c/ffffff?text=Nagios" class="rounded-lg"/><span>Nagios</span></div>
+                    </div>
+                     <div data-id="devops" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/1f2937/ffffff?text=GitHub" class="rounded-lg"/><span>GitHub</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0ea5e9/ffffff?text=Azure" class="rounded-lg"/><span>CI/CD Pipeline</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/4f46e5/ffffff?text=JIRA" class="rounded-lg"/><span>JIRA</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/dc2626/ffffff?text=Octopus" class="rounded-lg"/><span>Octopus Deploy</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/f43f5e/ffffff?text=ServiceNow" class="rounded-lg"/><span>ServiceNow</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/06b6d4/ffffff?text=Confluence" class="rounded-lg"/><span>Confluence</span></div>
+                     </div>
+                      
+                     <div data-id="data" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/16a34a/ffffff?text=Mongo" class="rounded-lg"/><span>MongoDB</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0ea5e9/ffffff?text=PostgreSQL" class="rounded-lg"/><span>PostgreSQL</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/6366f1/ffffff?text=DynamoDB" class="rounded-lg"/><span>DynamoDB</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/eab308/ffffff?text=MySQL" class="rounded-lg"/><span>MySQL</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/b91c1c/ffffff?text=MS+SQL" class="rounded-lg"/><span>MS SQL Server</span></div>
+                     </div>
+                      <div data-id="infra" class="hidden tech-panel grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0284c7/ffffff?text=Microsoft" class="rounded-lg"/><span>Windows Server</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/1f2937/ffffff?text=Linux" class="rounded-lg"/><span>Linux</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/f59e0b/ffffff?text=F5" class="rounded-lg"/><span>F5 Load Balancer</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/d97706/ffffff?text=Fortigate" class="rounded-lg"/><span>Fortigate Firewall</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/65a30d/ffffff?text=PowerShell" class="rounded-lg"/><span>PowerShell</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0369a1/ffffff?text=Cloudflare" class="rounded-lg"/><span>Cloudflare CDN</span></div>
+                        <div class="tech-icon flex flex-col items-center gap-2"><img src="https://placehold.co/64x64/0369a1/ffffff?text=Akamai" class="rounded-lg"/><span>Akamai CDN</span></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center">Professional Journey</h2>
+            <div class="relative max-w-5xl mx-auto timeline">
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">Feb 2026 - Present</p><h3 class="text-xl font-bold mt-1 text-white">Infrastructure Migration Lead</h3><p class="font-semibold text-slate-300 mb-3">CUE Clothing Co. <span class="text-xs text-cyan-400">(Consultant via Technoholia)</span></p><ul class="list-disc list-inside text-slate-400 space-y-2"><li><strong>End-to-End Architecture Mapping:</strong> Engineered comprehensive application and infrastructure diagrams for 70 core systems, including Infinity RMS (ERP) and POS, to identify critical integration points and legacy dependencies prior to Nexon Cloud migration.</li><li><strong>Strategic Test Governance:</strong> Authored and executed a rigorous IEEE 829-aligned testing suite encompassing System Integration (SIT), Smoke Testing, and Security Validations, ensuring 100% accuracy in data parity and connectivity across multiple migration waves.</li><li><strong>Performance & Risk Mitigation:</strong> Established multi-layered performance baselines using Dynatrace and OpManager, identifying architectural gaps in VLAN tagging and DNS propagation to protect the high-volume retail trade window.</li><li><strong>Automated Validation Framework:</strong> Developed automated PowerShell scripts for high-velocity "Power-On" checks and SQL/API connectivity triage, significantly reducing manual validation effort during high-stakes, after-hours cutover windows.</li><li><strong>Business Resilience & Backup:</strong> Optimized Veeam Backup & Replication policies for the landing zone, conducting file-level recovery drills and verifying "T-Minus 0" restore points to ensure a guaranteed rollback path for all production VMs.</li><li><strong>Consultative Leadership:</strong> Provided expert Go/No-Go recommendations to the Head of IT and PM based on real-time defect triage, while reviewing vendor contracts to maximize infrastructure service credits and project ROI.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Sep 2025 - Feb 2026</p><h3 class="text-xl font-bold mt-1 text-white">Incident Manager</h3><p class="font-semibold text-slate-300 mb-3">Coles Group, ADC, Sydney, Australia <span class="text-xs text-cyan-400">(Consultant via Technoholia)</span></p><ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Successfully managed priority incidents, consistently minimizing downtime for critical Warehouse Management (WMS) and automated material handling systems (MHS).</li><li>Rapidly assimilated specialized knowledge of the Witron automation platform and internal Coles IT infrastructure to drive efficient incident resolution.</li><li>Authored and distributed clear, real-time communications to Operations Managers and senior stakeholders during major IT outages, ensuring alignment and transparency.</li><li>Leveraged proprietary WMS dashboards and Dynatrace for real-time Application Performance Monitoring (APM) and rapid diagnosis of application-layer incidents.</li><li>Led Post-Incident Reviews (PIRs), identifying root causes for recurring automation faults and contributing actionable data to the Problem Management queue.</li><li>Applied ITIL best practices to incident triage, escalation, and resolution, improving the Mean Time To Resolve (MTTR) for core ADC functions by 10%.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">Jun 2025 - Present</p><h3 class="text-xl font-bold mt-1 text-white">Principal Solutions Consultant</h3><a href="https://www.technoholia.com.au/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">TECHNOHOLIA<i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2">
+                    <li>Develop Transformation Strategy, I work with your leadership to define a clear digital transformation vision, identifying opportunities to leverage technology to improve customer experience, operational efficiency, and revenue streams.</li> 
+                    <li>Analyze and map out your customers' journeys to identify pain points and opportunities. This helps us design solutions that deliver personalized and seamless experiences across all touchpoints.</li>
+                    <li>Provide expert guidance on your digital technology stack, helping you make informed decisions about new investments, vendor selection, and system rationalization to build a future-proof architecture.</li>
+                    <li>Conduct in-depth assessments of client's current IT landscapes, identifying gaps, opportunities, and risks related to AI integration, cloud migration, and cybersecurity resilience.</li>
+                    <li>Define project scope, objectives, deliverables, timelines, and resource requirements, ensuring projects are delivered on time, within budget, and to high quality standards.</li>
+                    <li>Translate complex business challenges into actionable, reliable, and scalable technical solutions leveraging AI algorithms, cloud architectures (AWS, Azure, GCP), and advanced cybersecurity frameworks.</li>
+                    <li>Lead complex consulting engagements from inception through successful delivery, often overseeing multiple project teams simultaneously.</li>
+                    <li>Implement and champion ITIL best practices throughout the client's IT service lifecycle, focusing on service strategy, design, transition, operation, and continual service improvement (CSI).</li>
+                    <li>Manage client expectations, mitigate risks, and resolve issues proactively during engagements.</li>
+                    <li>Build and maintain strong, long-term relationships with key client stakeholders, acting as a trusted advisor.</li>
+                    <li>Identify opportunities for additional consulting work within existing client accounts.</li>
+                    <li>Develop and deliver workshops, training programs, and knowledge-sharing sessions for clients and internal teams, especially in Technical Education contexts.</li>
+                </ul>
+                </div>
+            </div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Apr 2025 - Jun 2025</p><h3 class="text-xl font-bold mt-1 text-white">Domain Operation Manager</h3><a href="https://www.wooliesx.com.au/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Woolworths Group<i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a><ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Managed operations for Everyday Rewards, Insurance, Mobile, Market, WPay, and Data.</li><li>Achieved 100% uptime for Rewards website for six consecutive months.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">Mar 2023 - Apr 2023</p><h3 class="text-xl font-bold mt-1 text-white">Reliability Operation Manager</h3> <a href="https://www.wooliesx.com.au/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">WooliesX <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a><ul class="list-disc list-inside text-slate-400 space-y-2"><li>Led a team of 24 engineers supporting 500k customers.</li><li>Served as primary Incident Commander for Major Incidents (MIM).</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Oct 2021 - Mar 2023</p><h3 class="text-xl font-bold mt-1 text-white">Reliability Operation Specialist</h3><a href="https://www.wooliesx.com.au/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">WooliesX <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Supported over 15 million B2C customers across Australia.</li><li>Resolved 95% of fraud issues with innovative analytical solutions.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">Jan 2019 - Oct 2021</p><h3 class="text-xl font-bold mt-1 text-white">Tier II Technical Support Specialist</h3><a href="https://www.newforma.com/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Newforma <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2"><li>Provided enterprise software support for 100+ customers across APAC.</li><li>Managed projects from pre-sales to go-live with hands-on deployment.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Sep 2016 - Jan 2019</p><h3 class="text-xl font-bold mt-1 text-white">Managed Services, Manager APAC</h3><a href="https://www.optimizely.com/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Optimizely (Episerver) <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Led and mentored the APAC support team, fostering a high-performance culture.</li><li>Acted as primary technical escalation for P1 issues on Azure, AWS, and Rackspace.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">Sep 2015 - Sep 2016</p><h3 class="text-xl font-bold mt-1 text-white">Business Support Engineer</h3><a href="https://www.eset.com/au/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">ESET Australia <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2"><li>Provided pre-sales and post-sales consultancy for ESET's product range.</li><li>Delivered technical training to staff and clients on security best practices.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Feb 2015 - Sep 2015</p><h3 class="text-xl font-bold mt-1 text-white">System Administrator</h3><a href="http://presagesolutions.com/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Presage Solutions <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Designed and built Sitecore 7.2 Web Infrastructure for new projects.</li><li>Managed server security hardening (CIS, PCI DSS) and vulnerability scanning.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6"><p class="text-sm font-semibold text-cyan-400">May 2014 - Nov 2014</p><h3 class="text-xl font-bold mt-1 text-white">Senior Consultant</h3><a href="https://www.capgemini.com/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Capgemini <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2"><li>Managed IIS/SQL/Sitecore infrastructure projects and data center migrations.</li><li>Led team building, feasibility studies, and risk assessments for large-scale projects.</li></ul></div></div>
+                <div class="timeline-item relative pl-10 md:pl-0 mb-8"><div class="timeline-dot"></div><div class="timeline-content bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 md:text-right"><p class="text-sm font-semibold text-cyan-400">Apr 2010 - May 2014</p><h3 class="text-xl font-bold mt-1 text-white">System Administrator</h3><a href="https://www.investisdigital.com/" target="_blank" class="font-semibold text-slate-300 hover:text-cyan-400 mb-3 block">Investis Digital <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a> <ul class="list-disc list-inside text-slate-400 space-y-2 md:text-left"><li>Managed over 2000+ websites hosted on Windows IIS and Sitecore CMS.</li><li>Ensured 99.5%+ uptime and implemented robust security measures.</li></ul></div></div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center">Project Showcase</h2>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="project-filters">
+                    <button data-filter="*" class="project-filter py-2 px-5 rounded-full transition bg-cyan-500 text-white">All Projects</button>
+                    <button data-filter="wooliesx" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">WooliesX</button>
+                    <button data-filter="investis" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Investis</button>
+                    <button data-filter="migration" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Migration</button>
+                    <button data-filter="security" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Security</button>
+                    <button data-filter="infra" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Infrastructure</button>
+                    <button data-filter="personal" class="project-filter py-2 px-5 rounded-full transition bg-slate-800 hover:bg-slate-700">Personal Projects</button>
+                </div>
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["wooliesx", "migration"]'> <h3 class="text-lg font-bold text-white mb-2">Hollard Data Center Migration</h3><p class="text-sm">Led the time-critical migration of a data center from the Woolworths environment, ensuring a seamless transition with zero post-migration incidents.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["wooliesx", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">Monitoring Platform Integration</h3><p class="text-sm">Designed and executed end-to-end integration of Dynatrace, Splunk, PagerDuty, and New Relic for the Loyalty domain.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["wooliesx", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">RTL Program "Go-Live" Deployment</h3><p class="text-sm">Managed and coordinated the overnight deployment of 40 complex changes for a major program launch, ensuring zero downtime.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["newforma", "migration"]'> <h3 class="text-lg font-bold text-white mb-2">Cloud Migration for APAC Clients</h3><p class="text-sm">Led the migration of client infrastructure to Azure and AWS, automating deployment and monitoring scripts to improve scalability.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["wooliesx", "migration", "cloud"]'> <h3 class="text-lg font-bold text-white mb-2">CUE Clothing DC Migration to Private Cloud</h3><p class="text-sm">Conducted comprehensive business analysis of CUE Clothing's infrastructure and executed VMware to Nexon Private cloud migration using PowerShell test automation, enabling complex migration with ease and zero downtime.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["optimizely", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">High-Availability Web Platform</h3><p class="text-sm">Managed the deployment and support of high-availability web platforms, ensuring 99.99% uptime through automation.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["capgemini", "migration", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">Sitecore DC Migration</h3><p class="text-sm">Managed migration of business-critical applications and websites to a new Sitecore infrastructure, ensuring minimal downtime.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra", "upgrade"]'> <h3 class="text-lg font-bold text-white mb-2">Sitecore/IIS Version Upgrade</h3><p class="text-sm">Upgraded Sitecore CMS from v6.3.1 to v6.4.1 across a large web farm, improving performance and enabling new features.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">Server & App Consolidation</h3><p class="text-sm">Consolidated numerous Windows and .NET based applications to improve manageability and reduce operational costs.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra", "devops"]'> <h3 class="text-lg font-bold text-white mb-2">Automated Web Deployments</h3><p class="text-sm">Configured MS Web Deploy and DFS to create an automated deployment pipeline for web farms, reducing deployment time.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "devops"]'> <h3 class="text-lg font-bold text-white mb-2">SVN, TFS & SharePoint Setup</h3><p class="text-sm">Installed and configured Subversion, Team Foundation Server, and SharePoint to establish a collaborative development ecosystem.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">NAS Storage for Backups</h3><p class="text-sm">Designed and implemented a centralized NAS storage solution for enterprise-wide backups, improving data resilience and recovery times.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "security"]'> <h3 class="text-lg font-bold text-white mb-2">Enterprise Vulnerability Scanning</h3><p class="text-sm">Implemented a Nessus-based vulnerability scanning system to enhance the security posture across the enterprise infrastructure.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">Enterprise Monitoring System</h3><p class="text-sm">Deployed and configured Nagios and OpManager for comprehensive, enterprise-wide system and application monitoring.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra", "migration"]'> <h3 class="text-lg font-bold text-white mb-2">VMware Infrastructure Design</h3><p class="text-sm">Designed and implemented a scalable VMware virtual infrastructure from the ground up, including P2V and V2V migrations.</p></div>
+                    <div class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6" data-groups='["investis", "infra"]'> <h3 class="text-lg font-bold text-white mb-2">Open-Source CMS Implementation</h3><p class="text-sm">Deployed and managed a Wordpress CMS instance on a Linux and MySQL stack, diversifying the company's CMS offerings.</p></div>
+                    <a href="https://runcrick.pages.dev/" target="_blank" rel="noopener" class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 block" data-groups='["personal"]'> <h3 class="text-lg font-bold text-white mb-2">RunCrick <i data-lucide="arrow-up-right" class="inline h-4 w-4 text-cyan-400"></i></h3><p class="text-sm">Live cricket scoring web app with real-time scorecard, player stats, and match analytics. Built with AI-assisted development and hosted on Cloudflare Pages.</p></a>
+                    <a href="https://runcrick-juniors.pages.dev/" target="_blank" rel="noopener" class="project-card bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-6 block" data-groups='["personal"]'> <h3 class="text-lg font-bold text-white mb-2">RunCrick Junior <i data-lucide="arrow-up-right" class="inline h-4 w-4 text-cyan-400"></i></h3><p class="text-sm">Pairs &amp; equal-play cricket scorer for junior leagues — equal batting quotas, -4 wicket penalties, MVPs, progression charts, and downloadable PDF scorecards.</p></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certs -->
+        <section id="education" class="py-24">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center">Qualifications</h2>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+                <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-white">Education</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4"><div class="bg-cyan-500/10 text-cyan-400 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center"><i data-lucide="graduation-cap"></i></div><div><h4 class="font-bold text-lg text-white">PG Diploma in Computer Application</h4><p class="text-slate-400">Maharaja Sayajirao University</p></div></div>
+                        <div class="flex items-center space-x-4"><div class="bg-cyan-500/10 text-cyan-400 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center"><i data-lucide="graduation-cap"></i></div><div><h4 class="font-bold text-lg text-white">B.Sc. in Computer Science</h4><p class="text-slate-400">Sardar Patel University</p></div></div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-white">Certifications</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">Azure Fundamentals</span></div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">Google Cloud Leader</span></div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">PRINCE2 Practitioner</span></div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">VMware Certified Pro</span></div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">ITILv3 Foundation</span></div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex items-center space-x-3"><i data-lucide="award" class="h-5 w-5 text-cyan-400 flex-shrink-0"></i><span class="text-slate-300">MCSA & CCNA</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400 mb-12 text-center">Let's Connect</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Get in Touch -->
+                    <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-cyan-500/10 text-cyan-400 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Email</p>
+                                    <a href="mailto:contact@technoholia.com.au" class="text-white hover:text-cyan-400 transition-colors">contact@technoholia.com.au</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-cyan-500/10 text-cyan-400 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center">
+                                    <i data-lucide="calendar"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Schedule a Meeting</p>
+                                    <a href="https://calendar.app.google/BDeS9nnua4ZFd37g6" target="_blank" class="text-white hover:text-cyan-400 transition-colors">Book a Time</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-cyan-500/10 text-cyan-400 rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center">
+                                    <i data-lucide="contact"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Digital Card</p>
+                                    <a href="vcard.html" class="text-white hover:text-cyan-400 transition-colors">vCard</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Response Time -->
+                    <div class="bg-slate-900 rounded-xl shadow-2xl shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-cyan-400/20 border border-slate-800 p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Response Time</h3>
+                        <p class="text-slate-300 mb-6">I typically respond within 24 hours. For urgent inquiries, please use the calendar link above to schedule an immediate consultation.</p>
+                        <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-4">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="clock" class="text-cyan-400 w-5 h-5"></i>
+                                <div>
+                                    <p class="text-white font-semibold">Average Response</p>
+                                    <p class="text-cyan-400 text-sm">Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950/50 border-t border-slate-800 py-6">
+        <div class="container mx-auto text-center text-slate-500">
+            <p>&copy; 2025 Gopal Shah | Director, Technoholia</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+        
+        const setupTabSystem = (tabsContainerId, panelsContainerSelector, tabSelector, panelSelector) => {
+            const tabsContainer = document.getElementById(tabsContainerId);
+            if (!tabsContainer) return;
+
+            const panels = document.querySelectorAll(panelSelector);
+            const activeClasses = ['bg-cyan-500', 'text-white'];
+            const inactiveClasses = ['bg-slate-800', 'hover:bg-slate-700'];
+
+            tabsContainer.addEventListener('click', (e) => {
+                const clickedTab = e.target.closest(tabSelector);
+                if (!clickedTab) return;
+
+                // Deactivate all tabs
+                tabsContainer.querySelectorAll(tabSelector).forEach(button => {
+                    button.classList.remove(...activeClasses);
+                    button.classList.add(...inactiveClasses);
+                });
+
+                // Activate clicked tab
+                clickedTab.classList.add(...activeClasses);
+                clickedTab.classList.remove(...inactiveClasses);
+
+                // Show correct panel
+                const targetPanelId = clickedTab.dataset.target;
+                panels.forEach(panel => {
+                    panel.classList.toggle('hidden', panel.dataset.id !== targetPanelId);
+                });
+            });
+        };
+
+        const setupFilterSystem = (filtersContainerId, gridSelector, cardSelector, filterButtonSelector) => {
+            const filtersContainer = document.getElementById(filtersContainerId);
+            if (!filtersContainer) return;
+            
+            const projectCards = document.querySelectorAll(cardSelector);
+            const activeClasses = ['bg-cyan-500', 'text-white'];
+            const inactiveClasses = ['bg-slate-800', 'hover:bg-slate-700'];
+
+            filtersContainer.addEventListener('click', (e) => {
+                const clickedFilter = e.target.closest(filterButtonSelector);
+                if (!clickedFilter) return;
+
+                // Deactivate all filters
+                filtersContainer.querySelectorAll(filterButtonSelector).forEach(button => {
+                    button.classList.remove(...activeClasses);
+                    button.classList.add(...inactiveClasses);
+                });
+
+                // Activate clicked filter
+                clickedFilter.classList.add(...activeClasses);
+                clickedFilter.classList.remove(...inactiveClasses);
+                
+                const filter = clickedFilter.dataset.filter;
+                
+                projectCards.forEach(card => {
+                    const groups = JSON.parse(card.dataset.groups.replace(/'/g, '"'));
+                    const shouldShow = filter === '*' || groups.includes(filter);
+                    card.classList.toggle('hidden', !shouldShow);
+                });
+            });
+        };
+
+        // Initialize systems
+        setupTabSystem('tech-tabs', '#tech-content', '.tech-tab', '.tech-panel');
+        setupFilterSystem('project-filters', '#project-grid', '.project-card', '.project-filter');
+
+        // Scroll animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light-theme');
+            themeIcon.setAttribute('data-lucide', 'moon');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light-theme');
+            const isLight = html.classList.contains('light-theme');
+            
+            // Update icon
+            themeIcon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
+            lucide.createIcons();
+            
+            // Save preference
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Resume download functionality
+        const resumeDownload = document.getElementById('resume-download');
+        resumeDownload.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Create a comprehensive text resume for download
+            const resumeContent = `GOPAL SHAH
+Principal Solutions Consultant | Director, Technoholia
+===============================================
+
+CONTACT INFORMATION
+------------------
+Email: contact@technoholia.com.au
+LinkedIn: https://www.linkedin.com/in/gopalshah20/
+Website: https://www.technoholia.com.au
+Location: Sydney, NSW, Australia
+
+PROFESSIONAL SUMMARY
+--------------------
+Principal Solutions Consultant with 15+ years of global experience in digital transformation, 
+DXP platforms, AI solutions, cloud architecture, and ITIL best practices. 
+Based in Sydney with international experience across UK, USA, Europe, and APAC regions.
+
+Expert in developing transformation strategies, leading complex consulting engagements, 
+and implementing scalable technical solutions leveraging AI algorithms, cloud architectures 
+(AWS, Azure, GCP), and advanced cybersecurity frameworks.
+
+CORE COMPETENCIES
+------------------
+• Digital Transformation Strategy & Roadmap Development
+• Digital Experience Platforms (AEM, Sitecore, Optimizely, WordPress)
+• Artificial Intelligence & Machine Learning Integration
+• Cloud Architecture & Migration (AWS, Azure, GCP, Private Cloud)
+• Infrastructure Modernization & VMware Technologies
+• ITIL Service Management & DevOps Practices
+• Project Management & Agile Methodologies
+• Cybersecurity & Vulnerability Management
+• Performance Monitoring & Observability
+• Business Analysis & Technical Consulting
+
+PROFESSIONAL EXPERIENCE
+--------------------------
+
+TECHNOHOLIA | Sydney, Australia
+Principal Solutions Consultant (June 2025 - Present)
+• Develop transformation strategies and define digital transformation vision for clients
+• Analyze customer journeys and design seamless multi-touchpoint experiences
+• Provide expert guidance on digital technology stack and future-proof architecture
+• Conduct in-depth IT landscape assessments for AI, cloud, and cybersecurity
+• Lead complex consulting engagements from inception through successful delivery
+• Implement and champion ITIL best practices across service lifecycle
+• Build and maintain strong client relationships as trusted advisor
+• Develop and deliver technical education workshops and training programs
+
+CUE CLOTHING CO. | Sydney, Australia
+Infrastructure Migration Lead (February 2026 - Present)
+• Consultant via Technoholia for retail infrastructure migration project
+• Engineered comprehensive application and infrastructure diagrams for 70 core systems
+• Authored IEEE 829-aligned testing suite for VMware to Nexon Cloud migration
+• Established performance baselines using Dynatrace and OpManager
+• Developed automated PowerShell scripts for validation and connectivity triage
+• Optimized Veeam Backup & Replication policies for landing zone
+• Provided Go/No-Go recommendations and vendor contract optimization
+
+COLES GROUP, ADC | Sydney, Australia
+Incident Manager (September 2025 - February 2026)
+• Consultant via Technoholia for retail distribution center operations
+• Managed priority incidents for Warehouse Management (WMS) and automated MHS
+• Assimilated Witron automation platform and Coles IT infrastructure
+• Authored real-time communications for major IT outages
+• Leveraged WMS dashboards and Dynatrace for APM and diagnosis
+• Led Post-Incident Reviews (PIRs) and root cause analysis
+• Applied ITIL best practices, improving MTTR by 10%
+
+WOOLWORTHS GROUP | Sydney, Australia
+Domain Operation Manager (April 2025 - June 2025)
+• Managed operations for Everyday Rewards, Insurance, Mobile, Market, WPay, and Data
+• Achieved 100% uptime for Rewards website for six consecutive months
+
+Reliability Operation Manager (March 2023 - April 2023)
+• Led team of 24 engineers supporting 500k customers
+• Served as primary Incident Commander for Major Incidents (MIM)
+
+Reliability Operation Specialist (October 2021 - March 2023)
+• Supported over 15 million B2C customers across Australia
+• Resolved 95% of fraud issues with innovative analytical solutions
+
+NEWFORMA | Sydney, Australia
+Tier II Technical Support Specialist (January 2019 - October 2021)
+• Provided enterprise software support for 100+ customers across APAC
+• Managed projects from pre-sales to go-live with hands-on deployment
+
+OPTIMIZELY (EPISERVER) | Sydney, Australia
+Managed Services, Manager APAC (September 2016 - January 2019)
+• Led and mentored APAC support team, fostering high-performance culture
+• Acted as primary technical escalation for P1 issues on Azure, AWS, Rackspace
+
+ESET AUSTRALIA | Sydney, Australia
+Business Support Engineer (September 2015 - September 2016)
+• Provided pre-sales and post-sales consultancy for ESET's product range
+• Delivered technical training on security best practices
+
+PRESAGE SOLUTIONS | Sydney, Australia
+System Administrator (February 2015 - September 2015)
+• Designed and built Sitecore 7.2 Web Infrastructure for new projects
+• Managed server security hardening (CIS, PCI DSS) and vulnerability scanning
+
+CAPGEMINI | Sydney, Australia
+Senior Consultant (May 2014 - November 2014)
+• Managed IIS/SQL/Sitecore infrastructure projects and data center migrations
+• Led team building, feasibility studies, and risk assessments
+
+INVESTIS DIGITAL | Sydney, Australia
+System Administrator (April 2010 - May 2014)
+• Managed over 2000+ websites hosted on Windows IIS and Sitecore CMS
+• Ensured 99.5%+ uptime and implemented robust security measures
+
+SELECTED PROJECTS & ACHIEVEMENTS
+----------------------------------
+
+CUE CLOTHING DC MIGRATION TO PRIVATE CLOUD
+• End-to-End Architecture Mapping for 70 core systems including Infinity RMS (ERP) and POS
+• Strategic Test Governance with IEEE 829-aligned testing suite (SIT, Smoke, Security)
+• Performance & Risk Mitigation using Dynatrace and OpManager baselines
+• Automated Validation Framework with PowerShell scripts for high-velocity checks
+• Business Resilience & Backup optimization with Veeam policies and recovery drills
+
+WOOLIESX HIGH-AVAILABILITY PLATFORMS
+• Achieved 100% uptime for Rewards website across six consecutive months
+• Managed time-critical data center migration with zero post-migration incidents
+• Led overnight deployment of 40 complex changes for RTL Program launch
+
+ENTERPRISE MONITORING & OBSERVABILITY
+• Designed and executed end-to-end integration of Dynatrace, Splunk, PagerDuty, New Relic
+• Deployed Nagios and OpManager for comprehensive enterprise-wide monitoring
+• Implemented vulnerability scanning with Nessus across enterprise infrastructure
+
+CLOUD MIGRATION & INFRASTRUCTURE
+• Led client infrastructure migrations to Azure and AWS with automated deployment
+• Designed scalable VMware virtual infrastructure including P2V and V2V migrations
+• Optimized backup strategies and disaster recovery solutions
+
+EDUCATION & CERTIFICATIONS
+--------------------------
+
+EDUCATION
+• PG Diploma in Computer Application, Maharaja Sayajirao University
+• B.Sc. in Computer Science, Sardar Patel University
+
+PROFESSIONAL CERTIFICATIONS
+• Azure Fundamentals
+• Google Cloud Leader
+• PRINCE2 Practitioner
+• VMware Certified Professional
+• ITIL v3 Foundation
+• Microsoft Certified Solutions Associate (MCSA)
+• Cisco Certified Network Associate (CCNA)
+
+TECHNICAL EXPERTISE
+-------------------
+
+ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+• Azure AI Foundry, Machine Learning Models, AI Integration Strategies
+
+CLOUD & VIRTUALIZATION
+• Microsoft Azure, Amazon Web Services, Google Cloud Platform
+• VMware vSphere, Private Cloud, Nexon Cloud
+• Infrastructure as Code (IaC), Cloud Migration Strategies
+
+CMS & DIGITAL EXPERIENCE PLATFORMS
+• Adobe Experience Manager (AEM), Sitecore CMS, Optimizely
+• WordPress, Custom CMS Development, Web Content Management
+
+OBSERVABILITY & MONITORING
+• Dynatrace, Splunk, PagerDuty, New Relic
+• Nagios, OpManager, Application Performance Monitoring
+
+DEVOPS & AUTOMATION
+• PowerShell Scripting, Automation Frameworks
+• CI/CD Pipelines, Infrastructure Automation
+• MS Web Deploy, Distributed File Systems
+
+SECURITY & COMPLIANCE
+• Cybersecurity Frameworks, Vulnerability Management
+• PCI DSS, CIS Security Hardening, Nessus Scanning
+• Identity & Access Management, Security Best Practices
+
+DATABASES & STORAGE
+• Microsoft SQL Server, MySQL, Database Administration
+• NAS Storage Solutions, Backup & Replication Strategies
+
+NETWORKING & INFRASTRUCTURE
+• Enterprise Networking, Load Balancing, VLAN Configuration
+• Windows Server Administration, IIS Management
+• Core Infrastructure Design & Implementation
+
+LANGUAGES & TOOLS
+------------------
+• Programming: PowerShell, SQL, JavaScript, HTML/CSS
+• Platforms: Windows Server, Linux, VMware
+• Tools: Git, JIRA, Confluence, Office 365
+
+INTERESTS & FOCUS
+------------------
+• AI-Driven Problem Solving & Automation
+• Cloud Architecture & Modernization
+• Technical Education & Mentorship
+• Operational Excellence & Process Improvement
+• Digital Transformation Strategy Development
+
+REFERENCES AVAILABLE UPON REQUEST
+===============================================
+Last Updated: March 2026
+`;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Gopal_Shah_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
+
+        // Re-initialize Lucide icons after dynamic content
+        setTimeout(() => lucide.createIcons(), 100);
+
+    </script>
+</body>
+</html>
